@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Continental Bridge Freight Line | Ocean, Air &amp; Road Freight Since 2011</title>
+    <meta name="description" content="Continental Bridge Freight Line: ocean, air and road freight since 2011 from our head offices in Amsterdam and the United Kingdom. Track shipments online and request a quote." />
+    <meta name="theme-color" content="#0a2342" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Continental Bridge Freight Line" />
+    <meta property="og:title" content="Continental Bridge Freight Line | Ocean, Air &amp; Road Freight Since 2011" />
+    <meta property="og:description" content="Continental Bridge Freight Line: ocean, air and road freight since 2011 from our head offices in Amsterdam and the United Kingdom. Track shipments online and request a quote." />
+    <meta property="og:image" content="ocean-freight.jpg" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"Organization","name":"Continental Bridge Freight Line","url":"https://www.continentalbridgefreightline.com/","logo":"https://www.continentalbridgefreightline.com/logo.png","foundingDate":"2011","email":"info@continentalbridgefreightline.com","description":"Ocean, air and road freight forwarding from Amsterdam and the United Kingdom."}
+    </script>
+  </head>
+  <body data-page="home">
+    <div id="site-header"></div>
+    <main id="main">
+      <section class="hero">
+        <img src="ocean-freight.jpg" alt="" width="1600" height="900" fetchpriority="high" />
+        <div class="wrap">
+          <span class="badge-since"><b>Since <span data-founded>2011</span></b><span data-years data-suffix=" years">15 years</span> of ocean, air &amp; road freight</span>
+          <h1>Bridging continents, delivering trust.</h1>
+          <p class="lead">
+            Ocean, air and road freight between Europe, Africa and the world,
+            managed from our head offices in Amsterdam and the United Kingdom.
+          </p>
+
+          <div class="action-panel" id="actions">
+            <div class="action-tabs" role="tablist" aria-label="What would you like to do?">
+              <button role="tab" id="tab-track" aria-controls="pane-track" aria-selected="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.3-4.3"/></svg><span>Track</span></button>
+              <button role="tab" id="tab-quote" aria-controls="pane-quote" aria-selected="false" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span>Get a quote</span></button>
+              <button role="tab" id="tab-tools" aria-controls="pane-tools" aria-selected="false" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg><span>Ship tools</span></button>
+            </div>
+
+            <form class="action-body" id="pane-track" role="tabpanel" aria-labelledby="tab-track" action="track.html" method="get">
+              <label for="hcode">Track your shipment</label>
+              <div class="row">
+                <input class="in" id="hcode" name="code" placeholder="Tracking number, e.g. CB3A9B71C2" autocomplete="off" required />
+                <button class="btn btn-primary" type="submit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.3-4.3"/></svg>Track</button>
+              </div>
+              <small>Track up to 10 shipments at once: separate numbers with a comma.</small>
+            </form>
+
+            <form class="action-body" id="pane-quote" role="tabpanel" aria-labelledby="tab-quote" action="contact.html" method="get" hidden>
+              <label for="qq-from">Where is your cargo going?</label>
+              <div class="row">
+                <input class="in" id="qq-from" name="from" placeholder="From (city, country)" autocomplete="off" />
+                <input class="in" id="qq-to" name="to" placeholder="To (city, country)" autocomplete="off" />
+              </div>
+              <div class="row">
+                <select class="in" name="mode" aria-label="Transport">
+                  <option value="Ocean freight">By sea</option>
+                  <option value="Air freight">By air</option>
+                  <option value="Road transport">By road</option>
+                  <option value="Not sure">Not sure yet</option>
+                </select>
+                <button class="btn btn-primary" type="submit">Continue →</button>
+              </div>
+              <small>No account needed. We reply with a written quote by email.</small>
+            </form>
+
+            <div class="action-body" id="pane-tools" role="tabpanel" aria-labelledby="tab-tools" hidden>
+              <label>Plan your shipment</label>
+              <div class="quick">
+                <a class="chip" href="tools.html#volumetric"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM3.3 7 12 12l8.7-5M12 22V12"/></svg>Volumetric weight</a>
+                <a class="chip" href="tools.html#cbm"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>CBM calculator</a>
+                <a class="chip" href="tools.html#containers"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6M12 10v4M12 2v3"/></svg>Container sizes</a>
+                <a class="chip" href="tools.html#incoterms"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>Incoterms</a>
+                <a class="chip" href="tools.html#documents"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Document checklist</a>
+                <a class="chip" href="tools.html#restricted"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></svg>Restricted items</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Company facts">
+        <div class="wrap">
+          <div class="stat"><b data-founded>2011</b><span>Year we started trading</span></div>
+          <div class="stat"><b data-years data-suffix="+">15+</b><span>Years moving freight</span></div>
+          <div class="stat"><b>3</b><span>Transport modes: sea, air and road</span></div>
+          <div class="stat"><b>24/7</b><span>Online shipment tracking</span></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">What we do</span>
+            <h2>Freight services for every kind of cargo</h2>
+            <p class="lead">
+              From a single pallet to full containers, we plan the route, handle
+              the paperwork and keep you updated until delivery.
+            </p>
+          </div>
+          <div class="grid g3">
+            <article class="card">
+              <div class="pic"><img src="ocean-freight.jpg" alt="Container ship at sea" loading="lazy" width="800" height="500" /></div>
+              <div class="body">
+                <h3>Ocean freight</h3>
+                <p>Full container (FCL) and shared container (LCL) shipping on the main routes between Europe, Africa, the Americas and Asia.</p>
+                <a class="more" href="services.html#ocean">Learn more →</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="pic"><img src="air-freight.jpg" alt="Cargo being loaded onto an aircraft" loading="lazy" width="800" height="500" /></div>
+              <div class="body">
+                <h3>Air freight</h3>
+                <p>Fast, scheduled air cargo for urgent and high-value goods, with collection and airport handling arranged for you.</p>
+                <a class="more" href="services.html#air">Learn more →</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="pic"><img src="road-freight.jpg" alt="Lorry on the motorway" loading="lazy" width="800" height="500" /></div>
+              <div class="body">
+                <h3>Road transport</h3>
+                <p>Trucking across the UK and mainland Europe, and inland delivery from the port to your door.</p>
+                <a class="more" href="services.html#road">Learn more →</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="pic"><img src="warehouse.jpg" alt="Warehouse aisles with stored goods" loading="lazy" width="800" height="500" /></div>
+              <div class="body">
+                <h3>Warehousing</h3>
+                <p>Secure storage, consolidation and packing before export, so several suppliers can ship as one load.</p>
+                <a class="more" href="services.html#warehouse">Learn more →</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="pic"><img src="customs.jpg" alt="Officers inspecting a sealed container" loading="lazy" width="800" height="500" /></div>
+              <div class="body">
+                <h3>Customs clearance</h3>
+                <p>Export and import paperwork prepared and filed correctly, so your cargo is not held up at the border.</p>
+                <a class="more" href="services.html#customs">Learn more →</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="pic"><img src="door-to-door.jpg" alt="Truck loaded with crated cargo" loading="lazy" width="800" height="500" /></div>
+              <div class="body">
+                <h3>Door-to-door</h3>
+                <p>One booking from the supplier’s gate to the receiver’s door, with one tracking number for the whole trip.</p>
+                <a class="more" href="services.html#door">Learn more →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Why Continental Bridge</span>
+            <h2>Experience since <span data-founded>2011</span>, service you can check</h2>
+          </div>
+          <div class="features">
+            <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span><h3>One point of contact</h3><p>A single team handles your booking, documents, customs and delivery, so you never chase several companies.</p></div>
+            <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0zM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></span><h3>Live tracking</h3><p>Every shipment gets its own tracking number. Check its status online at any time, day or night.</p></div>
+            <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span><h3>Clear written quotes</h3><p>You receive an itemised quote before you book, showing what is included, so there are no surprises.</p></div>
+            <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><h3>Customs know-how</h3><p>We prepare export and import declarations and tell you in advance which documents are needed.</p></div>
+            <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span><h3>Cargo insurance</h3><p>Protect valuable goods with cargo insurance, arranged with your booking on request.</p></div>
+            <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><h3>Europe to the world</h3><p>From Amsterdam and the UK we connect the main European gateways with Africa, the Americas, the Middle East and Asia.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">How it works</span>
+            <h2>Four steps from booking to delivery</h2>
+          </div>
+          <div class="grid g4 steps">
+            <div class="stepc"><h3>Request a quote</h3><p>Tell us what you are sending, from where and to where.</p></div>
+            <div class="stepc"><h3>Book and collect</h3><p>We confirm the price, collect the goods and give you a tracking number.</p></div>
+            <div class="stepc"><h3>Ship and clear</h3><p>Your cargo travels by sea, air or road and we handle customs.</p></div>
+            <div class="stepc"><h3>Deliver</h3><p>We deliver to the receiver and confirm when it has arrived.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Industries</span>
+            <h2>Logistics shaped around your sector</h2>
+            <p class="lead">Different cargo needs different handling. These are the areas we work in most.</p>
+          </div>
+          <div class="tiles">
+            <a class="tile" href="industries.html#machinery"><img src="door-to-door.jpg" alt="" loading="lazy" /><div class="t"><h3>Machinery &amp; parts</h3><p>Crated, heavy and out-of-gauge cargo</p></div></a>
+            <a class="tile" href="industries.html#retail"><img src="warehouse.jpg" alt="" loading="lazy" /><div class="t"><h3>Retail &amp; e-commerce</h3><p>Consolidation, storage and onward delivery</p></div></a>
+            <a class="tile" href="industries.html#vehicles"><img src="ocean-freight.jpg" alt="" loading="lazy" /><div class="t"><h3>Vehicles</h3><p>Cars and trucks by container or RoRo</p></div></a>
+            <a class="tile" href="industries.html#perishables"><img src="road-freight.jpg" alt="" loading="lazy" /><div class="t"><h3>Food &amp; perishables</h3><p>Temperature-controlled transport on request</p></div></a>
+            <a class="tile" href="industries.html#urgent"><img src="air-freight.jpg" alt="" loading="lazy" /><div class="t"><h3>Urgent &amp; high-value</h3><p>Air freight with priority handling</p></div></a>
+            <a class="tile" href="industries.html#personal"><img src="customs.jpg" alt="" loading="lazy" /><div class="t"><h3>Personal effects</h3><p>Relocations and shipments for families</p></div></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap split">
+          <img src="air-freight.jpg" alt="Cargo being loaded onto a freight aircraft" width="1200" height="600" loading="lazy" />
+          <div class="text">
+            <span class="eyebrow">Our network</span>
+            <h2>Two head offices, one connected service</h2>
+            <p class="lead">
+              Since <span data-founded>2011</span>, our Amsterdam and United Kingdom offices have coordinated shipments
+              through the major European gateways and onward to Africa, the
+              Americas, the Middle East and Asia.
+            </p>
+            <ul class="ticks">
+              <li>One point of contact for every shipment</li>
+              <li>Live tracking updates at every stage</li>
+              <li>Clear, written quotes before you book</li>
+            </ul>
+            <div><a class="btn btn-outline" href="about.html">About us</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap with-side faq-split">
+          <div class="section-head" style="margin: 0">
+            <span class="eyebrow">Help centre</span>
+            <h2>Common questions</h2>
+            <p class="lead">Quick answers about tracking, quotes and customs.</p>
+            <div><a class="btn btn-outline" href="help.html">All questions</a></div>
+          </div>
+          <div class="faq">
+            <details><summary>Where do I find my tracking number?</summary><div class="a"><p>It is on your booking confirmation and receipt. It starts with <b>CB</b> followed by letters and numbers. Enter it on the <a href="track.html">tracking page</a>.</p></div></details>
+            <details><summary>How long does shipping take?</summary><div class="a"><p>It depends on the route and transport. As a guide, air freight takes a few days, road freight within Europe a few days to a week, and ocean freight several weeks. Your quote shows the expected transit time.</p></div></details>
+            <details><summary>Who pays import duties and taxes?</summary><div class="a"><p>It depends on the Incoterm agreed between buyer and seller. Usually the receiver pays import duties and VAT. See our <a href="tools.html#incoterms">Incoterms guide</a>.</p></div></details>
+            <details><summary>How do I pay for my shipment?</summary><div class="a"><p>We send an invoice by email from our company address with our bank details. We never ask for payment by gift card, cryptocurrency or money transfer apps. <a href="fraud.html">Read our fraud advice</a>.</p></div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="wrap">
+          <div style="display: grid; gap: 8px">
+            <h2>Ready to ship?</h2>
+            <p>Send us your cargo details and we will reply with a quote.</p>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <a class="btn btn-primary" href="contact.html#quote">Request a quote</a><a class="btn btn-light" href="track.html">Track a shipment</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <div id="site-footer"></div>
+    <script src="config.js"></script>
+    <script src="site.js"></script>
+  </body>
+</html>

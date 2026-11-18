@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Staff Admin | Continental Bridge Freight Line</title>
+    <meta name="description" content="Staff area." />
+    <meta name="robots" content="noindex" />
+    <meta
+      property="og:title"
+      content="Staff Admin | Continental Bridge Freight Line"
+    />
+    <meta property="og:description" content="Staff area." />
+    <meta property="og:image" content="ocean-freight.jpg" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="admin">
+    <div id="site-header"></div>
+    <main id="main">
+      <section class="section">
+        <div class="wrap admin-shell">
+          <div style="display: grid; gap: 6px">
+            <span class="eyebrow">Staff only</span>
+            <h1 style="font-size: 34px">Shipment admin</h1>
+          </div>
+          <div id="setupNote" class="demo-note" hidden>
+            The database is not connected yet. Follow the README (step 3) and
+            paste your Supabase details into <b>config.js</b>.
+          </div>
+
+          <form class="panel" id="loginForm" hidden style="max-width: 440px">
+            <h3>Sign in</h3>
+            <label style="display: grid; gap: 6px; font-weight: 600"
+              >Email<input
+                class="in"
+                id="lemail"
+                type="email"
+                required
+                autocomplete="username"
+            /></label>
+            <label style="display: grid; gap: 6px; font-weight: 600"
+              >Password<input
+                class="in"
+                id="lpass"
+                type="password"
+                required
+                autocomplete="current-password"
+            /></label>
+            <button class="btn btn-primary" type="submit">Sign in</button>
+            <div id="lerr" class="msg bad" hidden></div>
+          </form>
+
+          <div id="app" hidden class="admin-shell">
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <div class="tabs" role="tablist">
+                <button class="on" data-tab="list">Shipments</button
+                ><button data-tab="new">+ New shipment</button
+                ><button data-tab="msgs">Quote requests<span class="count" id="unreadCount" hidden>0</span></button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center">
+                <span
+                  id="who"
+                  style="color: var(--muted); font-size: 14px"
+                ></span
+                ><button
+                  class="btn btn-outline"
+                  id="logout"
+                  style="padding: 7px 14px"
+                >
+                  Sign out
+                </button>
+              </div>
+            </div>
+
+            <div class="panel" data-pane="list">
+              <div
+                style="
+                  display: flex;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                  justify-content: space-between;
+                "
+              >
+                <input
+                  class="in"
+                  id="filter"
+                  placeholder="Search tracking number, name, place…"
+                  style="max-width: 360px"
+                /><button
+                  class="btn btn-outline"
+                  id="exportShipments"
+                  type="button"
+                >
+                  Export CSV
+                </button>
+              </div>
+              <div class="tablewrap">
+                <table class="data">
+                  <thead>
+                    <tr>
+                      <th>Tracking no.</th>
+                      <th>Receiver</th>
+                      <th>Route</th>
+                      <th>Status</th>
+                      <th>Current location</th>
+                      <th>Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody id="rows"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <form class="panel form" data-pane="new" hidden id="newForm">
+              <h3 class="full">Create a shipment</h3>
+              <label>Sender name<input class="in" id="nsender" /></label>
+              <label
+                >Receiver name<input class="in" id="nreceiver" required
+              /></label>
+              <label
+                >Customer email<input
+                  class="in"
+                  id="nemail"
+                  type="email"
+                  required
+                  autocomplete="email"
+              /></label>
+              <label
+                >Receiver phone (include country code)<input
+                  class="in"
+                  id="nphone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="+31 6 12345678"
+              /></label>
+              <label>Description of goods<input class="in" id="ndesc" /></label>
+              <label
+                >From (origin)<input class="in" id="norigin" required
+              /></label>
+              <label
+                >To (destination)<input class="in" id="ndest" required
+              /></label>
+              <label
+                >First location<input
+                  class="in"
+                  id="nloc"
+                  placeholder="e.g. Amsterdam warehouse"
+                  required
+              /></label>
+              <label
+                >Estimated delivery<input class="in" id="neta" type="date"
+              /></label>
+              <div class="full">
+                <button class="btn btn-primary" type="submit">
+                  Create and get tracking number
+                </button>
+              </div>
+            </form>
+
+            <div class="panel" data-pane="msgs" hidden>
+              <div class="msg-tools">
+                <div class="seg" role="group" aria-label="Show">
+                  <button type="button" aria-pressed="true" data-mfilter="all">All</button>
+                  <button type="button" aria-pressed="false" data-mfilter="unread">Unread</button>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap">
+                  <button class="btn btn-outline btn-sm" type="button" id="alertsBtn">🔔 Turn on desktop alerts</button>
+                  <button class="btn btn-outline btn-sm" type="button" id="markAll">Mark all as read</button>
+                </div>
+              </div>
+              <div class="tablewrap">
+                <table class="data">
+                  <thead>
+                    <tr>
+                      <th>Received</th>
+                      <th>Name</th>
+                      <th>Contact</th>
+                      <th>Service / route</th>
+                      <th>Message</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="mrows"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="panel" id="detail" hidden></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+    <script src="site.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

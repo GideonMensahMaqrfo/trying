@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Shipping Tools: CBM, Volumetric Weight, Containers &amp; Incoterms | Continental Bridge Freight Line</title>
+    <meta name="description" content="Free shipping tools: volumetric weight and CBM calculators, container sizes, Incoterms 2020 guide, document checklist and restricted items." />
+    <meta name="theme-color" content="#0a2342" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Continental Bridge Freight Line" />
+    <meta property="og:title" content="Shipping Tools: CBM, Volumetric Weight, Containers &amp; Incoterms | Continental Bridge Freight Line" />
+    <meta property="og:description" content="Free shipping tools: volumetric weight and CBM calculators, container sizes, Incoterms 2020 guide, document checklist and restricted items." />
+    <meta property="og:image" content="ocean-freight.jpg" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="tools">
+    <div id="site-header"></div>
+    <main id="main">
+      <section class="hero page-hero">
+        <img src="warehouse.jpg" alt="" width="800" height="500" />
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / Shipping tools</nav>
+          <h1>Shipping tools &amp; guides</h1>
+          <p class="lead">Work out volume and chargeable weight, compare container sizes and check what you need before you ship.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap with-side">
+          <nav class="side-nav" aria-label="On this page">
+            <a href="#volumetric">Volumetric weight</a>
+            <a href="#cbm">CBM calculator</a>
+            <a href="#containers">Container sizes</a>
+            <a href="#incoterms">Incoterms</a>
+            <a href="#documents">Document checklist</a>
+            <a href="#restricted">Restricted items</a>
+            <a href="#packing">Packing tips</a>
+          </nav>
+
+          <div class="stack" style="min-width: 0">
+            <div class="calc" id="volumetric">
+              <div style="display: grid; gap: 6px">
+                <h2 style="font-size: 26px">Volumetric (chargeable) weight</h2>
+                <p style="color: var(--muted)">Carriers charge whichever is higher: the actual weight or the volumetric weight worked out from the size of your package.</p>
+              </div>
+              <div class="seg" role="group" aria-label="Transport type" id="vwMode">
+                <button type="button" aria-pressed="true" data-div="6000">Air freight</button>
+                <button type="button" aria-pressed="false" data-div="5000">Express / courier</button>
+                <button type="button" aria-pressed="false" data-div="3000">Road</button>
+                <button type="button" aria-pressed="false" data-div="1000">Sea (LCL)</button>
+              </div>
+              <div class="fields">
+                <label>Length (cm)<input class="in" type="number" min="0" step="0.1" id="vwL" value="120" inputmode="decimal" /></label>
+                <label>Width (cm)<input class="in" type="number" min="0" step="0.1" id="vwW" value="80" inputmode="decimal" /></label>
+                <label>Height (cm)<input class="in" type="number" min="0" step="0.1" id="vwH" value="100" inputmode="decimal" /></label>
+                <label>Pieces<input class="in" type="number" min="1" step="1" id="vwQ" value="1" inputmode="numeric" /></label>
+                <label>Actual weight per piece (kg)<input class="in" type="number" min="0" step="0.1" id="vwA" value="150" inputmode="decimal" /></label>
+              </div>
+              <div class="answer" aria-live="polite">
+                <div><small>Volume</small><b id="vwVol">–</b></div>
+                <div><small>Volumetric weight</small><b id="vwVw">–</b></div>
+                <div><small>Actual weight</small><b id="vwAw">–</b></div>
+                <div class="hi"><small>Chargeable weight</small><b id="vwCw">–</b></div>
+              </div>
+              <small style="color: var(--muted)" id="vwNote"></small>
+            </div>
+
+            <div class="calc" id="cbm">
+              <div style="display: grid; gap: 6px">
+                <h2 style="font-size: 26px">CBM calculator</h2>
+                <p style="color: var(--muted)">Add each type of box or pallet to find the total volume in cubic metres (m³) and how much of a container it fills.</p>
+              </div>
+              <div class="seg" role="group" aria-label="Units" id="cbmUnit">
+                <button type="button" aria-pressed="true" data-u="cm">Centimetres</button>
+                <button type="button" aria-pressed="false" data-u="in">Inches</button>
+              </div>
+              <div id="cbmRows" style="display: grid; gap: 10px"></div>
+              <div><button class="btn btn-outline btn-sm" type="button" id="cbmAdd">+ Add another item</button></div>
+              <div class="answer" aria-live="polite">
+                <div class="hi"><small>Total volume</small><b id="cbmTot">–</b></div>
+                <div><small>Cubic feet</small><b id="cbmFt">–</b></div>
+                <div><small>20ft container</small><b id="cbm20">–</b></div>
+                <div><small>40ft container</small><b id="cbm40">–</b></div>
+              </div>
+              <small style="color: var(--muted)">Container fill is based on a practical load of about 28 m³ (20ft) and 58 m³ (40ft). Real loads depend on the shape of the cargo.</small>
+            </div>
+
+            <div style="display: grid; gap: 16px; scroll-margin-top: 110px" id="containers">
+              <h2 style="font-size: 26px">Container sizes</h2>
+              <p style="color: var(--muted)">Typical inside measurements. Exact figures vary slightly between shipping lines.</p>
+              <div class="tablebox">
+                <table class="spec">
+                  <thead><tr><th>Container</th><th>Inside L × W × H</th><th>Door opening W × H</th><th>Volume</th><th>Max. cargo weight*</th></tr></thead>
+                  <tbody>
+                    <tr><td><b>20ft standard</b></td><td>5.90 × 2.35 × 2.39 m</td><td>2.34 × 2.28 m</td><td>about 33 m³</td><td>about 28,000 kg</td></tr>
+                    <tr><td><b>40ft standard</b></td><td>12.03 × 2.35 × 2.39 m</td><td>2.34 × 2.28 m</td><td>about 67 m³</td><td>about 26,500 kg</td></tr>
+                    <tr><td><b>40ft high cube</b></td><td>12.03 × 2.35 × 2.69 m</td><td>2.34 × 2.58 m</td><td>about 76 m³</td><td>about 26,500 kg</td></tr>
+                    <tr><td><b>20ft reefer</b></td><td>5.44 × 2.29 × 2.27 m</td><td>2.29 × 2.26 m</td><td>about 28 m³</td><td>about 27,000 kg</td></tr>
+                    <tr><td><b>40ft high cube reefer</b></td><td>11.58 × 2.29 × 2.50 m</td><td>2.29 × 2.57 m</td><td>about 67 m³</td><td>about 29,000 kg</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <small style="color: var(--muted)">* Road weight limits in the country of collection or delivery may be lower than the container’s maximum. We check this for you when we quote.</small>
+            </div>
+
+            <div style="display: grid; gap: 16px; scroll-margin-top: 110px" id="incoterms">
+              <h2 style="font-size: 26px">Incoterms® 2020 at a glance</h2>
+              <p style="color: var(--muted)">Incoterms are the trade rules that say who arranges and pays for each part of the journey, and where the risk passes from seller to buyer. Agree one with your buyer or supplier before booking.</p>
+              <div class="tablebox">
+                <table class="spec">
+                  <thead><tr><th>Rule</th><th>Name</th><th>Seller delivers / risk passes</th><th>Main freight paid by</th><th>Use for</th></tr></thead>
+                  <tbody>
+                    <tr><td><b>EXW</b></td><td>Ex Works</td><td>At the seller’s premises</td><td>Buyer</td><td>Any transport</td></tr>
+                    <tr><td><b>FCA</b></td><td>Free Carrier</td><td>Handed to the buyer’s carrier</td><td>Buyer</td><td>Any transport</td></tr>
+                    <tr><td><b>CPT</b></td><td>Carriage Paid To</td><td>Handed to the first carrier</td><td>Seller</td><td>Any transport</td></tr>
+                    <tr><td><b>CIP</b></td><td>Carriage and Insurance Paid To</td><td>Handed to the first carrier</td><td>Seller (plus insurance)</td><td>Any transport</td></tr>
+                    <tr><td><b>DAP</b></td><td>Delivered at Place</td><td>At destination, ready to unload</td><td>Seller</td><td>Any transport</td></tr>
+                    <tr><td><b>DPU</b></td><td>Delivered at Place Unloaded</td><td>At destination, unloaded</td><td>Seller</td><td>Any transport</td></tr>
+                    <tr><td><b>DDP</b></td><td>Delivered Duty Paid</td><td>At destination, import duties paid</td><td>Seller</td><td>Any transport</td></tr>
+                    <tr><td><b>FAS</b></td><td>Free Alongside Ship</td><td>Alongside the vessel at the export port</td><td>Buyer</td><td>Sea and inland waterway</td></tr>
+                    <tr><td><b>FOB</b></td><td>Free on Board</td><td>On board the vessel at the export port</td><td>Buyer</td><td>Sea and inland waterway</td></tr>
+                    <tr><td><b>CFR</b></td><td>Cost and Freight</td><td>On board the vessel at the export port</td><td>Seller</td><td>Sea and inland waterway</td></tr>
+                    <tr><td><b>CIF</b></td><td>Cost, Insurance and Freight</td><td>On board the vessel at the export port</td><td>Seller (plus insurance)</td><td>Sea and inland waterway</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <small style="color: var(--muted)">This is a short guide, not legal advice. Incoterms® is a trademark of the International Chamber of Commerce.</small>
+            </div>
+
+            <div style="display: grid; gap: 16px; scroll-margin-top: 110px" id="documents">
+              <h2 style="font-size: 26px">Document checklist</h2>
+              <p style="color: var(--muted)">Most international shipments need the documents below. We tell you exactly which ones apply when we quote.</p>
+              <div class="grid g2">
+                <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span><h3>For every shipment</h3>
+                  <ul class="ticks">
+                    <li><b>Commercial invoice</b>: seller, buyer, goods, value and currency</li>
+                    <li><b>Packing list</b>: number of pieces, weights and sizes</li>
+                    <li><b>Transport document</b>: bill of lading (sea), air waybill (air) or CMR (road)</li>
+                    <li><b>EORI number</b> for businesses importing to or exporting from the EU or UK</li>
+                  </ul>
+                </div>
+                <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><h3>Sometimes needed</h3>
+                  <ul class="ticks">
+                    <li><b>Certificate of origin</b>, to claim lower duty rates</li>
+                    <li><b>Import or export licence</b> for controlled goods</li>
+                    <li><b>Health or phytosanitary certificates</b> for food, plants and timber</li>
+                    <li><b>Dangerous goods declaration</b> and safety data sheet (SDS)</li>
+                    <li><b>Vehicle title and ID</b> when shipping cars</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: grid; gap: 16px; scroll-margin-top: 110px" id="restricted">
+              <h2 style="font-size: 26px">Restricted and prohibited items</h2>
+              <p style="color: var(--muted)">Some goods cannot be shipped at all; others can travel only with special packing, labels and paperwork. Always tell us exactly what you are sending.</p>
+              <div class="grid g2">
+                <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></svg></span><h3>We do not accept</h3>
+                  <ul class="ticks">
+                    <li>Illegal drugs and narcotics</li>
+                    <li>Weapons, ammunition and explosives</li>
+                    <li>Counterfeit or pirated goods</li>
+                    <li>Cash, bank notes and bearer documents</li>
+                    <li>Live animals</li>
+                    <li>Goods banned in the origin or destination country</li>
+                  </ul>
+                </div>
+                <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span><h3>Accepted with conditions</h3>
+                  <ul class="ticks">
+                    <li>Lithium batteries and electronics containing them</li>
+                    <li>Paints, perfumes, aerosols and other flammable items</li>
+                    <li>Chemicals and other dangerous goods (UN-numbered)</li>
+                    <li>Food, plants, seeds and timber packaging</li>
+                    <li>Vehicles, engines and parts containing fuel or oil</li>
+                    <li>Medicines and medical devices</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: grid; gap: 16px; scroll-margin-top: 110px" id="packing">
+              <h2 style="font-size: 26px">Packing tips</h2>
+              <div class="features" style="grid-template-columns: repeat(2, 1fr)">
+                <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM3.3 7 12 12l8.7-5M12 22V12"/></svg></span><h3>Use strong outer packaging</h3><p>Double-wall boxes for parcels; pallets or wooden crates for heavy goods. Fill empty space so nothing moves.</p></div>
+                <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35zM6 18h12M6 14h12M6 10h12"/></svg></span><h3>Palletise for safety</h3><p>Stack boxes squarely on the pallet, heaviest at the bottom, with no overhang. Strap and stretch-wrap the load.</p></div>
+                <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span><h3>Label every piece</h3><p>Show sender, receiver and tracking number on each piece, and number them “1 of 4”, “2 of 4” and so on.</p></div>
+                <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10zM2 21c0-3 1.9-5.4 5.1-6"/></svg></span><h3>Use treated wood</h3><p>Wooden pallets and crates for export must meet the ISPM 15 standard and carry its heat-treatment mark.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="wrap">
+          <div style="display: grid; gap: 8px">
+            <h2>Know your size and weight?</h2>
+            <p>Send us the details and we will reply with a written quote.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html#quote">Request a quote</a>
+        </div>
+      </section>
+
+    </main>
+    <div id="site-footer"></div>
+    <script src="config.js"></script>
+    <script src="site.js"></script>
+    <script src="tools.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Track a Shipment | Continental Bridge Freight Line</title>
+    <meta name="description" content="Track one or up to 10 Continental Bridge Freight Line shipments online and see their status, location and history." />
+    <meta name="theme-color" content="#0a2342" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Continental Bridge Freight Line" />
+    <meta property="og:title" content="Track a Shipment | Continental Bridge Freight Line" />
+    <meta property="og:description" content="Track one or up to 10 Continental Bridge Freight Line shipments online and see their status, location and history." />
+    <meta property="og:image" content="ocean-freight.jpg" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="track">
+    <div id="site-header"></div>
+    <main id="main">
+      <section class="hero page-hero">
+        <img src="ocean-freight.jpg" alt="" width="800" height="500" />
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / Track</nav>
+          <h1>Track your shipment</h1>
+          <form class="trackbox" id="trackForm">
+            <label for="code">Tracking number(s)</label>
+            <div class="row">
+              <input class="in" id="code" name="code" placeholder="e.g. CB3A9B71C2, CB7F21D0A4" autocomplete="off" required />
+              <button class="btn btn-primary" type="submit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.3-4.3"/></svg>Track</button>
+            </div>
+            <small>Track up to 10 shipments at once: separate numbers with a comma or space.</small>
+          </form>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap with-side aside-right">
+          <div style="display: grid; gap: 18px; min-width: 0">
+            <div class="track-tools" id="trackTools" hidden>
+              <button class="btn btn-outline btn-sm" type="button" id="copyLink"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Copy tracking link</button>
+              <button class="btn btn-outline btn-sm" type="button" id="printBtn"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>Print</button>
+            </div>
+            <div id="out" aria-live="polite">
+              <div class="msg info">Enter your tracking number above to see where your shipment is.</div>
+            </div>
+          </div>
+          <aside style="display: grid; gap: 16px">
+            <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span><h3>Need help?</h3><p>Email us and quote your tracking number. We reply on working days.</p><a class="more" id="helpMail" href="contact.html">Contact us →</a></div>
+            <div class="feature"><span class="icon"><svg class="" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span><h3>Status meanings</h3>
+              <p><b>Received</b>: goods are with us.<br><b>In Transit</b>: on the way.<br><b>At Port</b>: arrived at the port or airport.<br><b>Customs Clearance</b>: being cleared.<br><b>Out for Delivery</b>: on the final leg.<br><b>Delivered</b>: handed to the receiver.</p>
+            </div>
+            <div class="note alert"><b>Stay safe:</b> we never ask for payment by gift card, crypto or money transfer app to release a parcel. <a href="fraud.html">Learn more</a>.</div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+    <div id="site-footer"></div>
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+    <script src="site.js"></script>
+    <script src="track.js"></script>
+  </body>
+</html>
